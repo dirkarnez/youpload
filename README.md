@@ -20,4 +20,5 @@ pause
 
 ### Reference
 - [Upload a Video  |  YouTube Data API  |  Google Developers](https://developers.google.com/youtube/v3/guides/uploading_a_video#Sample_Code)
+- [api-samples/go at master · youtube/api-samples](https://github.com/youtube/api-samples/tree/master/go)
 
