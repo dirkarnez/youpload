@@ -136,11 +136,11 @@ func openURL(url string) error {
 	case "linux":
 		err = exec.Command("xdg-open", url).Start()
 	case "windows":
-		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://localhost:4001/").Start()
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
 	case "darwin":
 		err = exec.Command("open", url).Start()
 	default:
-		err = fmt.Errorf("Cannot open URL %s on this platform", url)
+		err = fmt.Errorf("cannot open URL %s on this platform", url)
 	}
 	return err
 }
@@ -183,7 +183,7 @@ func getTokenFromWeb(config *oauth2.Config, authURL string) (*oauth2.Token, erro
 		log.Fatalf("Unable to open authorization URL in web server: %v", err)
 	} else {
 		fmt.Println("Your browser has been opened to an authorization URL.",
-			" This program will resume once authorization has been provided.\n")
+			" This program will resume once authorization has been provided.")
 		fmt.Println(authURL)
 	}
 
